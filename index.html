@@ -8,7 +8,7 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,8 +20,10 @@
         .container {
             text-align: center;
             position: relative;
-            width: 800px;
-            height: 600px;
+            width: 95%;
+            max-width: 800px;
+            height: 60vh;
+            max-height: 500px;
         }
         canvas {
             border: 2px solid rgba(255, 255, 255, 0.1);
@@ -30,13 +32,15 @@
             background-color: transparent;
             position: relative;
             z-index: 1;
+            width: 100%;
+            height: 100%;
         }
         .info {
             color: #aaa;
-            margin-top: 15px;
-            font-size: 16px;
+            margin-top: 10px;
+            font-size: 14px;
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 20px;
             display: inline-block;
             position: relative;
@@ -45,8 +49,8 @@
         .counter {
             color: #ff3366;
             font-weight: bold;
-            font-size: 18px;
-            margin-top: 10px;
+            font-size: 16px;
+            margin-top: 8px;
             position: relative;
             z-index: 5;
         }
@@ -56,19 +60,19 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
-            font-size: 48px;
+            font-size: 24px;
             font-weight: bold;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
             transition: opacity 0.5s ease;
         }
         .message-line {
             display: flex;
-            gap: 5px;
+            gap: 2px;
         }
         .letter {
             opacity: 0;
@@ -90,9 +94,9 @@
             background: linear-gradient(45deg, #ff3366, #ff0044);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 8px 16px;
             border-radius: 30px;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             opacity: 0;
@@ -113,15 +117,16 @@
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
-            font-size: 24px;
+            font-size: 14px;
             text-align: center;
             opacity: 0;
             transition: opacity 1s ease;
             z-index: 15;
             background: rgba(0, 0, 0, 0.7);
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-radius: 15px;
-            max-width: 500px;
+            max-width: 90%;
+            line-height: 1.4;
         }
         .show-message {
             opacity: 1;
@@ -136,9 +141,9 @@
             background: linear-gradient(45deg, #3399ff, #0066cc);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-radius: 30px;
-            font-size: 20px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             opacity: 0;
@@ -183,15 +188,15 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            margin: -225px 0 0 -225px;
+            margin: -112px 0 0 -112px;
         }
 
         #ui .love_word {
             color: #ea80b0;
-            font-size: 1.4rem;
+            font-size: 0.9rem;
             transform: translateY(-100%) rotateZ(-30deg);
             text-shadow: 0 0 10px #fff;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
             opacity: 0.9;
             transition: all 0.3s ease;
@@ -217,79 +222,79 @@
                 transform: translateX(0px);
             }
             to {
-                transform: translateX(450px);
+                transform: translateX(225px);
             }
         }
 
         @keyframes vertical {
             0% {
-                transform: translateY(180px);
+                transform: translateY(90px);
             }
             10% {
-                transform: translateY(45px);
+                transform: translateY(22.5px);
             }
             15% {
-                transform: translateY(4.5px);
+                transform: translateY(2.25px);
             }
             18% {
                 transform: translateY(0px);
             }
             20% {
-                transform: translateY(4.5px);
+                transform: translateY(2.25px);
             }
             22% {
-                transform: translateY(34.61538px);
+                transform: translateY(17.3px);
             }
             24% {
-                transform: translateY(64.28571px);
+                transform: translateY(32.14px);
             }
             25% {
-                transform: translateY(112.5px);
+                transform: translateY(56.25px);
             }
             26% {
-                transform: translateY(64.28571px);
+                transform: translateY(32.14px);
             }
             28% {
-                transform: translateY(34.61538px);
+                transform: translateY(17.3px);
             }
             30% {
-                transform: translateY(4.5px);
+                transform: translateY(2.25px);
             }
             32% {
                 transform: translateY(0px);
             }
             35% {
-                transform: translateY(4.5px);
+                transform: translateY(2.25px);
             }
             40% {
-                transform: translateY(45px);
+                transform: translateY(22.5px);
             }
             50% {
-                transform: translateY(180px);
+                transform: translateY(90px);
             }
             71% {
-                transform: translateY(428.57143px);
+                transform: translateY(214.29px);
             }
             72.5% {
-                transform: translateY(441.17647px);
+                transform: translateY(220.59px);
             }
             75% {
-                transform: translateY(450px);
+                transform: translateY(225px);
             }
             77.5% {
-                transform: translateY(441.17647px);
+                transform: translateY(220.59px);
             }
             79% {
-                transform: translateY(428.57143px);
+                transform: translateY(214.29px);
             }
             100% {
-                transform: translateY(180px);
+                transform: translateY(90px);
             }
         }
 
         .love-controls {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 0;
             width: 100%;
             display: flex;
@@ -301,11 +306,11 @@
             background: rgba(255, 77, 109, 0.2);
             color: white;
             border: 1px solid #ff4d6d;
-            padding: 10px 20px;
+            padding: 6px 12px;
             border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.8rem;
             font-family: 'Dosis', sans-serif;
             font-weight: 600;
             letter-spacing: 1px;
@@ -328,7 +333,7 @@
 
         .floating-heart {
             position: absolute;
-            font-size: 20px;
+            font-size: 14px;
             color: #ea80b0;
             opacity: 0;
             animation: float 8s linear infinite;
@@ -357,11 +362,35 @@
             pointer-events: none !important;
             transition: opacity 0.5s ease;
         }
+
+        /* Media query untuk layar kecil */
+        @media (max-width: 480px) {
+            .birthday-message {
+                font-size: 20px;
+            }
+            .hidden-message {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+            .message-button, .second-animation-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .birthday-message {
+                font-size: 18px;
+            }
+            .hidden-message {
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <canvas id="myCanvas" width="800" height="600"></canvas>
+        <canvas id="myCanvas"></canvas>
         <div class="info">Animation will stop after completing 3 full hearts</div>
         <div class="counter" id="counter">Hearts drawn: <span id="heartCount">0</span>/3</div>
         
@@ -430,9 +459,20 @@
         const infoElement = document.querySelector('.info');
         const counterElement = document.querySelector('.counter');
 
+        // Setup canvas responsif
+        function setupCanvas() {
+            const container = document.querySelector('.container');
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+        }
+
+        // Panggil fungsi setup dan tambahkan event listener untuk resize
+        setupCanvas();
+        window.addEventListener('resize', setupCanvas);
+
         // Center of the canvas
-        const centerX = 400;
-        const centerY = 300;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
 
         // Arrays untuk menyimpan floating elements
         const floatingHearts = [];
@@ -465,6 +505,10 @@
         const targetTime = 10000;
 
         function animate() {
+            // Update center coordinates setiap frame untuk responsif
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             redrawLoveLines();
@@ -477,8 +521,13 @@
                 
                 while (i < targetI && !isStopped) {
                     let k = i * 0.01 * speedMultiplier;
-                    let x = hearta(k) * 20 + centerX;
-                    let y = centerY - heartb(k) * 20;
+                    
+                    // Scale heart size berdasarkan ukuran canvas
+                    const scaleFactor = Math.min(canvas.width, canvas.height) / 1000;
+                    const heartSize = 15 * scaleFactor;
+                    
+                    let x = hearta(k) * heartSize + centerX;
+                    let y = centerY - heartb(k) * heartSize;
 
                     // Draw line from (x, y) to center
                     ctx.beginPath();
@@ -756,7 +805,7 @@
                 
                 const wordDiv = document.createElement('div');
                 wordDiv.className = 'love_word';
-                wordDiv.textContent = 'I Love You';
+                wordDiv.textContent = 'I Love You yaya';
                 
                 verticalDiv.appendChild(wordDiv);
                 horizontalDiv.appendChild(verticalDiv);
